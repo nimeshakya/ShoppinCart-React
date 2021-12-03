@@ -98,6 +98,7 @@ nav > h1 {
 
 .small-navbar > h1 {
     color: var(--color-shadow-2);
+    font-size: 1.2rem;
 }
 
 .nav-modal-open-btn {
