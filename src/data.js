@@ -1,0 +1,60 @@
+const data = [
+    {
+        id: 0,
+        name: 'Nike Air Zoom G.T. Run',
+        price: 250,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8210639b-e9cd-4681-a10b-0b2fb159364b/air-zoom-gt-run-basketball-shoes-vKjHsp.png',
+        quantityInCart: 0,
+        inCart: false,
+    },
+    {
+        id: 1,
+        name: 'Nike Air Max 95',
+        price: 240,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e18f6d06-b10f-4b97-aa4e-78db173a87e0/air-max-95-shoes-zcVhs3.png',
+        quantityInCart: 0,
+        inCart: false,
+    },
+    {
+        id: 2,
+        name: 'Jordan MA3',
+        price: 180,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/7243c3dc-4e7b-4aa7-b8fa-f23353b29de1/jordan-ma2-shoe-dmkgC9.png',
+        quantityInCart: 0,
+        inCart: false,
+    },
+    {
+        id: 3,
+        name: 'Nike Air Zoom Alphafly NEXT%',
+        price: 299,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/c43f926d-bb0f-440f-b863-3118eb4c0142/air-zoom-alphafly-next-road-racing-shoes-mGK8M0.png',
+        quantityInCart: 0,
+        inCart: false,
+    },
+    {
+        id: 4,
+        name: 'Nike VaporFly 4% Flyknit',
+        price: 209,
+        image: 'https://c.static-nike.com/a/images/f_auto,b_rgb:f5f5f5,w_880/acmoik7t1kfbprm8hsqs/vaporfly-4-flyknit-running-shoe-7R7zSn.jpg',
+        quantityInCart: 0,
+        inCart: false,
+    },
+    {
+        id: 5,
+        name: 'Nike Air Monarch IV PR',
+        price: 89,
+        image: 'https://c.static-nike.com/a/images/f_auto,b_rgb:f5f5f5,w_880/vjsleghax3228bpidanh/air-monarch-iv-pr-shoe-qf64pl.jpg',
+        quantityInCart: 0,
+        inCart: false,
+    },
+    {
+        id: 6,
+        name: 'Nike Air Max Deluxe SE',
+        price: 149,
+        image: 'https://c.static-nike.com/a/images/f_auto,b_rgb:f5f5f5,w_880/rkhls7wdxdydeg1vkwkt/air-max-deluxe-se-shoe-T6Vkl2.jpg',
+        quantityInCart: 0,
+        inCart: false,
+    },
+];
+
+export default data;
