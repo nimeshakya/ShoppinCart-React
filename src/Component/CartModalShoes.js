@@ -55,6 +55,7 @@ const CartModalShoes = ({
                     max='10'
                     value={shoeQuantity}
                     onChange={(e) => setShoeQuantity(e.target.value)}
+                    className="amount-input"
                 />
             </td>
             <td>${shoeTotalAmount}</td>

@@ -327,6 +327,11 @@ nav > h1 {
     margin: 10px 0 10px 0;
 }
 
+.amount-input {
+    background-color: var(--color-background);
+    min-width: 20px;
+}
+
 .cart-footer {
     display: flex;
     justify-content: space-between;
