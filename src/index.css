@@ -329,8 +329,8 @@ nav > h1 {
 }
 
 .amount-input {
-    background-color: var(--color-background);
-    min-width: 20px;
+    min-width: 50px;
+    padding: 0 2px;
 }
 
 .cart-footer {
