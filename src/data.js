@@ -5,7 +5,7 @@ const data = [
         price: 250,
         image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8210639b-e9cd-4681-a10b-0b2fb159364b/air-zoom-gt-run-basketball-shoes-vKjHsp.png',
         quantityInCart: 0,
-        inCart: true,
+        inCart: false,
     },
     {
         id: 1,
@@ -13,7 +13,7 @@ const data = [
         price: 240,
         image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e18f6d06-b10f-4b97-aa4e-78db173a87e0/air-max-95-shoes-zcVhs3.png',
         quantityInCart: 0,
-        inCart: true,
+        inCart: false,
     },
     {
         id: 2,

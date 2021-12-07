@@ -9,6 +9,7 @@ import CartModalShoe from './CartModalShoe';
 const CartModal = () => {
     const { shoesData, toggleShowCart, showCartModal } =
         React.useContext(GlobalContext);
+    const shoesInCart = shoesData.filter((item) => item.inCart === true);
     return (
         <>
             {showCartModal && (
@@ -22,20 +23,19 @@ const CartModal = () => {
                                 className='cart-close-icon'
                             />
                         </div>
-                        <table className='cart-table' width='100%'>
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
+                        {shoesInCart.length > 0 ? (
+                            <table className='cart-table' width='100%'>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                {shoesData
-                                    .filter((item) => item.inCart === true)
-                                    .map((shoe) => {
+                                <tbody>
+                                    {shoesInCart.map((shoe) => {
                                         return (
                                             <CartModalShoe
                                                 key={shoe.id}
@@ -43,8 +43,11 @@ const CartModal = () => {
                                             />
                                         );
                                     })}
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        ) : (
+                            <h2 className='cart-empty-msg'>No Items In Cart</h2>
+                        )}
                         <div className='cart-footer'>
                             <h3>Cart Total</h3>
                             <h3>Number of items: 0</h3>

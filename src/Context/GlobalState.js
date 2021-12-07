@@ -19,6 +19,13 @@ export const GlobalProvider = ({ children }) => {
         dispatch({ type: 'TOGGLE_SHOW_CART' });
     };
 
+    const toggleShoeInCart = (id) => {
+        dispatch({
+            type: 'TOGGLE_SHOE_IN_CART',
+            payload: id,
+        });
+    };
+
     return (
         <GlobalContext.Provider
             value={{
@@ -27,6 +34,7 @@ export const GlobalProvider = ({ children }) => {
                 showCartModal: state.showCartModal,
                 showNavModal: state.showNavModal,
                 toggleShowCart,
+                toggleShoeInCart,
             }}
         >
             {children}

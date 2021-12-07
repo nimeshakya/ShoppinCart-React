@@ -3,6 +3,7 @@ import React from 'react';
 import { GlobalContext } from '../Context/GlobalState';
 
 const Shoe = ({ shoe }) => {
+    const { toggleShoeInCart } = React.useContext(GlobalContext);
     return (
         <li className='shoe-in-list'>
             <div className='img-container'>
@@ -15,6 +16,7 @@ const Shoe = ({ shoe }) => {
                     className={
                         shoe.inCart ? 'button-incart' : 'button-notincart'
                     }
+                    onClick={() => toggleShoeInCart(shoe.id)}
                     disabled={shoe.inCart}
                 >
                     {shoe.inCart ? 'In the Cart' : 'Add to Cart'}
