@@ -6,7 +6,7 @@ import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { GlobalContext } from '../Context/GlobalState';
 
 const NavBar = () => {
-    const { toggleShowCart } = React.useContext(GlobalContext);
+    const { toggleShowCart, shoesInCart } = React.useContext(GlobalContext);
     return (
         <nav>
             <h1>Shopping Cart</h1>
@@ -28,7 +28,7 @@ const NavBar = () => {
                 </li>
             </ul>
             <div className='cart-btn-container' onClick={toggleShowCart}>
-                <h3>0</h3>
+                {shoesInCart.length > 0 && <h3>{shoesInCart.length}</h3>}
                 <FontAwesomeIcon icon={faCartArrowDown} className='cart-icon' />
             </div>
         </nav>

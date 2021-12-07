@@ -7,9 +7,8 @@ import { GlobalContext } from '../Context/GlobalState';
 import CartModalShoe from './CartModalShoe';
 
 const CartModal = () => {
-    const { shoesData, toggleShowCart, showCartModal } =
+    const { shoesData, shoesInCart, toggleShowCart, showCartModal } =
         React.useContext(GlobalContext);
-    const shoesInCart = shoesData.filter((item) => item.inCart === true);
     return (
         <>
             {showCartModal && (
