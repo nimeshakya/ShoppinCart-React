@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Shoe from './Shoe';
+import { GlobalContext } from '../Context/GlobalState';
 
 const ShoesContainer = () => {
+    const { shoesData } = useContext(GlobalContext);
     return (
-        <div>
-            Shoes Container
-            <Shoe />
-        </div>
+        <ul className='shoe-list-section'>
+            {shoesData.map((shoe) => {
+                return <Shoe key={shoe.id} shoe={shoe} />;
+            })}
+        </ul>
     );
 };
 
