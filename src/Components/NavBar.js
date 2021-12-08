@@ -1,8 +1,12 @@
 import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-function Navbar({ showCart, setShowCart, cartShoesData }) {
+import { GlobalContext } from '../Context/GlobalState';
+
+const NavBar = () => {
+    const { toggleShowCart, shoesInCart } = React.useContext(GlobalContext);
     return (
         <nav>
             <h1>Shopping Cart</h1>
@@ -23,15 +27,12 @@ function Navbar({ showCart, setShowCart, cartShoesData }) {
                     <a href='#'>Contact</a>
                 </li>
             </ul>
-            <div
-                className='cart-btn-container'
-                onClick={() => setShowCart(!showCart)}
-            >
-                <h3>{cartShoesData.length}</h3>
+            <div className='cart-btn-container' onClick={toggleShowCart}>
+                {shoesInCart.length > 0 && <h3>{shoesInCart.length}</h3>}
                 <FontAwesomeIcon icon={faCartArrowDown} className='cart-icon' />
             </div>
         </nav>
     );
-}
+};
 
-export default Navbar;
+export default NavBar;
