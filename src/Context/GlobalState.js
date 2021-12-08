@@ -15,7 +15,7 @@ export const GlobalContext = React.createContext(initialState);
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = React.useReducer(AppReducer, initialState, () => {
         const localData = localStorage.getItem('shoesState');
-        return localData ? JSON.parse(localData) : {};
+        return localData ? JSON.parse(localData) : initialState;
     });
 
     // change the keys(properties) in local storage every time state changes
