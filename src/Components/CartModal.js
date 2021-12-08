@@ -9,6 +9,12 @@ import CartModalShoe from './CartModalShoe';
 const CartModal = () => {
     const { shoesData, shoesInCart, toggleShowCart, showCartModal } =
         React.useContext(GlobalContext);
+
+    let amountToPay = 0;
+    for (let i = 0; i < shoesInCart.length; i++) {
+        amountToPay += shoesInCart[i].quantityInCart * shoesInCart[i].price;
+    }
+
     return (
         <>
             {showCartModal && (
@@ -48,9 +54,9 @@ const CartModal = () => {
                             <h2 className='cart-empty-msg'>No Items In Cart</h2>
                         )}
                         <div className='cart-footer'>
-                            <h3>Cart Total</h3>
-                            <h3>Number of items: 0</h3>
-                            <h3>Total Price: $0</h3>
+                            <h3>Cart Totals</h3>
+                            <h3>Number of items: {shoesInCart.length}</h3>
+                            <h3>Total Price: ${amountToPay}</h3>
                         </div>
                         <button className='checkout-btn'>Checkout</button>
                     </div>

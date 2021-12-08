@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +6,15 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { GlobalContext } from '../Context/GlobalState';
 
 const CartModalShoe = ({ shoe }) => {
-    const { removeFromCart } = React.useContext(GlobalContext);
+    const { removeFromCart, quantityInCartChange } =
+        React.useContext(GlobalContext);
+
+    const [shoeQuantity, setShoeQuantity] = React.useState(shoe.quantityInCart);
+
+    useEffect(() => {
+        quantityInCartChange(shoe, shoeQuantity);
+    }, [shoeQuantity]);
+
     return (
         <tr className='shoe-in-cart'>
             <td>
@@ -19,10 +27,12 @@ const CartModalShoe = ({ shoe }) => {
                     name='shoe-quantity'
                     min='0'
                     max='10'
+                    value={shoeQuantity}
+                    onChange={(e) => setShoeQuantity(parseInt(e.target.value))}
                     className='amount-input'
                 />
             </td>
-            <td>$0</td>
+            <td>${shoeQuantity * shoe.price}</td>
             <td>
                 <FontAwesomeIcon
                     icon={faTrash}

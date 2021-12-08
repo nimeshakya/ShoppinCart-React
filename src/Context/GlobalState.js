@@ -34,6 +34,13 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
+    const quantityInCartChange = (shoe, quantityInCart) => {
+        dispatch({
+            type: 'QUANTITY_IN_CART_CHANGE',
+            payload: { shoe: shoe, quantityInCart: quantityInCart },
+        });
+    };
+
     return (
         <GlobalContext.Provider
             value={{
@@ -44,6 +51,7 @@ export const GlobalProvider = ({ children }) => {
                 toggleShowCart,
                 addToCart,
                 removeFromCart,
+                quantityInCartChange,
             }}
         >
             {children}

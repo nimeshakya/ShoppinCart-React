@@ -26,6 +26,7 @@ const AppReducer = (state, action) => {
                 shoesData: state.shoesData.map((shoe) => {
                     if (shoe.id === action.payload.id) {
                         shoe.inCart = !shoe.inCart;
+                        shoe.quantityInCart = 0;
                         return shoe;
                     } else {
                         return shoe;
@@ -34,6 +35,27 @@ const AppReducer = (state, action) => {
                 shoesInCart: state.shoesInCart.filter(
                     (item) => item.id !== action.payload.id
                 ),
+            };
+
+        case 'QUANTITY_IN_CART_CHANGE':
+            return {
+                ...state,
+                shoesData: state.shoesData.map((item) => {
+                    if (item.id === action.payload.shoe.id) {
+                        item.quantityInCart = action.payload.quantityInCart;
+                        return item;
+                    } else {
+                        return item;
+                    }
+                }),
+                shoesInCart: state.shoesInCart.map((item) => {
+                    if (item.id === action.payload.shoe.id) {
+                        item.quantityInCart = action.payload.quantityInCart;
+                        return item;
+                    } else {
+                        return item;
+                    }
+                }),
             };
 
         default:
