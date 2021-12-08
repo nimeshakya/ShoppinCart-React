@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import AppReducer from './AppReducer';
 import data from '../data';
@@ -13,7 +13,15 @@ const initialState = {
 export const GlobalContext = React.createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
-    const [state, dispatch] = React.useReducer(AppReducer, initialState);
+    const [state, dispatch] = React.useReducer(AppReducer, initialState, () => {
+        const localData = localStorage.getItem('shoesState');
+        return localData ? JSON.parse(localData) : {};
+    });
+
+    // change the keys(properties) in local storage every time state changes
+    useEffect(() => {
+        localStorage.setItem('shoesState', JSON.stringify(state));
+    }, [state]);
 
     // Actions
     const toggleShowCart = () => {
@@ -41,6 +49,13 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
+    const toggleNavModal = () => {
+        dispatch({
+            type: 'TOGGLE_NAV_MODAL',
+        });
+    };
+    // Actions
+
     return (
         <GlobalContext.Provider
             value={{
@@ -52,6 +67,7 @@ export const GlobalProvider = ({ children }) => {
                 addToCart,
                 removeFromCart,
                 quantityInCartChange,
+                toggleNavModal,
             }}
         >
             {children}

@@ -7,7 +7,7 @@ import { GlobalContext } from '../Context/GlobalState';
 import CartModalShoe from './CartModalShoe';
 
 const CartModal = () => {
-    const { shoesData, shoesInCart, toggleShowCart, showCartModal } =
+    const { shoesInCart, toggleShowCart, showCartModal } =
         React.useContext(GlobalContext);
 
     let amountToPay = 0;

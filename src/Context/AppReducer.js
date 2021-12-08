@@ -58,6 +58,12 @@ const AppReducer = (state, action) => {
                 }),
             };
 
+        case 'TOGGLE_NAV_MODAL':
+            return {
+                ...state,
+                showNavModal: !state.showNavModal,
+            };
+
         default:
             return state;
     }
